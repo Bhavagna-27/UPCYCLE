@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Upcycle — Clothing Recycling</title>
+  <style>
+    :root {
+      /* CSS variables are populated/overridden by app.js on load */
+      --color-primary: #D8D09F;       /* vanilla (light warm) */
+      --color-accent: #A51C30;        /* deep "Coke-tin" maroon */
+      --color-recycled: #4CAF50;      /* recycled/eco green */
+      --color-muted: #6B6B6B;         /* neutral text */
+      --color-bg: #ffffff;            /* fallback background */
+      --bg-gradient: radial-gradient(circle at 10% 10%, rgba(216,208,159,0.25), rgba(165,28,48,0.03) 40%, rgba(76,175,80,0.02) 100%);
+    }
+
+    html,body {
+      height: 100%;
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: var(--bg, var(--bg-gradient));
+      color: var(--color-muted);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    .app {
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      padding: 36px;
+    }
+
+    header {
+      display:flex;
+      align-items:center;
+      gap: 16px;
+    }
+
+    .logo {
+      width:56px;
+      height:56px;
+      border-radius:12px;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color: white;
+      font-weight:700;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    h1 {
+      margin:0;
+      color: #222;
+      font-size:1.35rem;
+      letter-spacing: -0.2px;
+    }
+
+    .intro {
+      max-width: 840px;
+      background: rgba(255,255,255,0.7);
+      border-radius: 12px;
+      padding: 18px;
+      box-shadow: 0 8px 30px rgba(19,18,23,0.04);
+    }
+
+    .palette {
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:12px;
+    }
+
+    .swatch {
+      width:110px;
+      border-radius:10px;
+      overflow:hidden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    }
+
+    .swatch .box {
+      height:64px;
+    }
+
+    .swatch .label {
+      padding:8px;
+      font-size:13px;
+      background:white;
+    }
+
+    footer {
+      margin-top:auto;
+      color: #555;
+      font-size: 13px;
+    }
+
+    /* small responsive tweaks */
+    @media (max-width:560px){
+      .app { padding:18px; }
+      .swatch { width:48%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="logo">U</div>
+      <div>
+        <h1>Upcycle</h1>
+        <div style="font-size:13px;color:#555">Clothing recycling & upcycling marketplace</div>
+      </div>
+    </header>
+
+    <section class="intro">
+      <strong>Brand palette</strong>
+      <p style="margin:8px 0 0 0">A warm, eco-friendly palette that pairs a soft vanilla background with a strong accent for calls-to-action and an eco-green for sustainability signals.</p>
+
+      <div class="palette" id="palette">
+        <!-- swatches populated by app.js -->
+      </div>
+    </section>
+
+    <section>
+      <h2 style="margin:0 0 8px 0">Quick demo components</h2>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <button id="primaryBtn" style="border:0;padding:10px 16px;border-radius:10px;background:var(--color-accent);color:white;cursor:pointer">Sell / Donate</button>
+        <button id="secondaryBtn" style="border:1px solid rgba(0,0,0,0.06);padding:10px 16px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.75));cursor:pointer">Browse Clothes</button>
+        <div style="margin-left:auto;align-self:center;color:#333">Reusable: <strong style="color:var(--color-recycled)">Yes</strong></div>
+      </div>
+    </section>
+
+    <footer>
+      Made with ♻️ • Upcycle — design demo
+    </footer>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
